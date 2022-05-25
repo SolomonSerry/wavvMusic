@@ -1,5 +1,7 @@
-import { FaHeadphonesAlt, FaBars } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md'
+// import { BsSoundwave } from 'react-icons/bs'
+import { GiSoundWaves } from 'react-icons/gi'
 // import { useState } from 'react';
 
 const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu, setHamburgerMenu }) => {
@@ -9,10 +11,10 @@ const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu
     return (
         <div className="headerContent wrapper">
             <div className="logo">
-                <div className="headphones">
-                    <FaHeadphonesAlt />
+                <h2>.WAVV</h2>
+                <div className="soundWave">
+                    <GiSoundWaves />
                 </div>
-                <h2>Amplify</h2>
             </div>
 
             <nav className='navText'>
