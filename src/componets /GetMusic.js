@@ -239,8 +239,8 @@ const GetMusic = ({ user, setShowModal, searchTerm, setSearchTerm, userInput, se
 
 
                 <div className="tagLine">
-                    <h1><span>Amplify</span>Your Music</h1>
-                    <p>Expand your musical horizon</p>
+                    <h1>.WAVV// Music.</h1>
+                    <p>Search For The New Wave</p>
                     {!user ?
                         <button onClick={() => setShowModal(true)}>Get Started</button>
                         :

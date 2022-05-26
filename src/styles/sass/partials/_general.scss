@@ -2,13 +2,14 @@
 
 
 $shadow1: gainsboro;
-$gradient: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
+$gradient: radial-gradient(ellipse at top, #e7c6ff, #b8c0ff,  transparent), radial-gradient(ellipse at bottom, #b8c0ff, #bbd0ff,  transparent); 
 
-
+// background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
 html {
     font-family: 'Sora', sans-serif;
     font-size: 125%;
     overflow-x: hidden;
+    // color: white;
 }
 
 

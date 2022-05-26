@@ -70,6 +70,7 @@
     }
     
     .swiper-button-next, .swiper-button-prev {
+      color: black;
       z-index: -10;
       // color: #3b5ec5;
     }
@@ -98,6 +99,7 @@
 }
 
 .swiper-slide-prev, .swiper-slide-next {
+  color: black;
   opacity: 50%;
   h3, h4 {
     opacity: 0;
@@ -117,6 +119,10 @@
     height: 5px;
     border-radius: 5px;
     // --swiper-theme-color: #3b5ec5;
+    
+  }
+  .swiper-pagination-bullet-active {
+    background: black;
   }
 
 }

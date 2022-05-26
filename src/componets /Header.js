@@ -11,7 +11,7 @@ const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu
     return (
         <div className="headerContent wrapper">
             <div className="logo">
-                <h2>.WAVV</h2>
+                <h2>.WAVV//</h2>
                 <div className="soundWave">
                     <GiSoundWaves />
                 </div>

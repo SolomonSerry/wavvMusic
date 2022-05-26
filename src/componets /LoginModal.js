@@ -2,6 +2,7 @@ import { useSpring, animated } from "react-spring"
 import { RiCloseCircleFill } from "react-icons/ri"
 import { FaHeadphonesAlt } from 'react-icons/fa'
 // import { FcGoogle } from 'react-icons/fc'
+import { GiSoundWaves } from 'react-icons/gi'
 
 const LoginModal = ({ email, setEmail, password, setPassword, handleLogin, handleSignUp, emailError, passwordError, hasAccount, setHasAccount, showModal, setShowModal,googleLogin }) => {
 
@@ -33,7 +34,7 @@ const LoginModal = ({ email, setEmail, password, setPassword, handleLogin, handl
 
                                 <>
                                     <div className="modalHeader">
-                                        <p><span><FaHeadphonesAlt /></span>Amplify</p>
+                                        <p>.WAVV//<span><GiSoundWaves /></span></p>
                                         <div className="closeIcon" onClick={ () => setShowModal(false) }>
                                             <RiCloseCircleFill />
                                         </div>

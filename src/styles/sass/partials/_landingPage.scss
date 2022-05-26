@@ -13,23 +13,23 @@ main {
 // background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
 
 
-h1 {
-    font-size: 6rem;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 700;
-    padding: 50px 0;
+
+    // font-size: 6rem;
+    // text-transform: uppercase;
+    // text-align: center;
+    // font-weight: 700;
+    // padding: 50px 0;
     // text-shadow: 5px 1px 8px $shadow1;
-    span {
+    h1 {
         font-size: 6rem;
-        font-family: 'Monoton', cursive;
+        font-family: 'Bungee Inline', cursive;
         text-transform: uppercase;
-        font-weight: 200;
+        font-weight: lighter;
         color: black;
         display: block;
         
     }
-}
+
 
 .tagLine {
     padding: 120px 0;

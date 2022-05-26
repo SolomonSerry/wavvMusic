@@ -14,7 +14,7 @@
 }
 
 .modalContent form {
-    background: #89d4cf;
+    background: #bbd0ff;
     // background: #79d3bc;
     // background: #63C2AB;
     color: black;
@@ -52,7 +52,7 @@
     button {
         width: 50%;
         margin: 30px auto;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Sora', sans-serif;
         border: none;
         background: #0D41E1;
         color: white; 
@@ -95,10 +95,11 @@
         color: black;
         span {
             font-size: 0.7rem;
-            color: #001FA8;
+            color: #0D41E1;
             cursor: pointer;
+            transition: color 0.25s ease-in-out;
             &:hover {
-                color: #111DCF;
+                color: #D90166;
             }
         }
     }
@@ -116,12 +117,12 @@
     justify-content: space-between;
     padding-bottom: 20px;
     p {
-        font-size: 1.5rem;
+        font-size: 2rem;
         text-transform: uppercase;
-        font-family: 'Monoton', cursive;
+        font-family: 'Bungee Outline', cursive;
         // background: black;
         color: black;
-        font-weight: 200;
+        font-weight: 600;
         margin: 0;
         padding: 0;
         display: flex;
@@ -133,9 +134,9 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin-bottom: 25px;
+            
             padding-right: 2px;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
         } 
     }
 }

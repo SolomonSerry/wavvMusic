@@ -6,7 +6,7 @@ const Contacts = () => {
         <section>
             <div id='contact' className="infoContainer wrapper">
                 <div className="logo">
-                    <h2>.WAVV</h2>
+                    <h2>.WAVV//</h2>
                     <div className="soundWave">
                         <GiSoundWaves />
                     </div>
