@@ -6,11 +6,13 @@ import Footer from './componets /Footer';
 import Contacts from './componets /Contacts';
 
 // React Hooks
-import {  useEffect, useState, useCallback  } from 'react';
+import { useState, useEffect } from 'react';
 
 
 // Firebase
-import fire from './firebase.js';
+// import fire from './firebase.js';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
+import { auth } from './firebase'
 
 function App() {
   
@@ -43,16 +45,61 @@ function App() {
     setPasswordError("");
   };
 
+  // const handleLogin = (e) => {
+  //   clearErrors();
+  //   e.preventDefault()
+  //   fire
+  //     .auth()
+  //     .signInWithEmailAndPassword(email, password)
+  //     .catch((error)=> {
+  //       switch(error.code) {
+  //         case "auth/invalid-email": 
+  //         case "auth/user-disabled": 
+  //         case "auth/user-not-found":
+  //           setEmailError(error.message);
+  //           break;
+  //         case "auth/wrong-password":
+  //           setPasswordError(error.message);
+  //           break;
+
+  //           default:
+  //       }
+  //     });
+  // };
+
+  // const handleSignUp = (e) => {
+  //   clearErrors();
+  //   e.preventDefault()
+  //   fire
+  //     .auth()
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .catch((error) => {
+  //       switch (error.code) {
+  //         case "auth/email-already-in-use":
+  //         case "auth/invalid-email":
+  //           setEmailError(error.message);
+  //           break;
+  //         case "auth/weak-password":
+  //           setPasswordError(error.message);
+  //           break;
+
+  //         default:
+  //       }
+  //     });
+  // };
+
   const handleLogin = (e) => {
     clearErrors();
-    e.preventDefault()
-    fire
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .catch((error)=> {
-        switch(error.code) {
-          case "auth/invalid-email": 
-          case "auth/user-disabled": 
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+    .then( (userCr) => {
+      setUser(userCr);
+      setShowModal(false);
+    })
+    .catch( (error) => {
+      switch (error.code) {
+          case "auth/invalid-email":
+          case "auth/user-disabled":
           case "auth/user-not-found":
             setEmailError(error.message);
             break;
@@ -61,18 +108,19 @@ function App() {
             break;
 
             default:
-        }
+        };
       });
   };
-
+  
   const handleSignUp = (e) => {
     clearErrors();
-    e.preventDefault()
-    fire
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .catch((error) => {
-        switch (error.code) {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+    .then( (userCr) => {
+      setUser(userCr);
+    })
+    .catch( (error) => {
+      switch (error.code) {
           case "auth/email-already-in-use":
           case "auth/invalid-email":
             setEmailError(error.message);
@@ -82,16 +130,36 @@ function App() {
             break;
 
           default:
-        }
-      });
+        };
+    });
   };
 
   const handleLogout = () => {
-    fire.auth().signOut();
-    clearInputs(); 
+    signOut(auth);
+    clearInputs();
     setStopMusic(true);
     setHamburgerMenu(false);
-  }
+  };
+
+  useEffect( () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user)
+        clearInputs();
+        setShowModal(false);
+        setStopMusic(false);
+      } else {
+        setUser("")
+      }
+    });
+  },[user]);
+
+  // const handleLogout = () => {
+  //   fire.auth().signOut();
+  //   clearInputs(); 
+  //   setStopMusic(true);
+  //   setHamburgerMenu(false);
+  // }
   
   
   // const googleLogin = () => {
@@ -105,37 +173,67 @@ function App() {
   //   })
   // }
 
-  const authListener = useCallback( () => {
-    fire
-    .auth()
-    .onAuthStateChanged((user) => {
-      if (user) {
-        clearInputs();
-        setUser(user);
-        setShowModal(false);
-        setStopMusic(false);
-      } 
-      else {
-        setUser("")
-        // setShowModal(true)
-      }
-    })
-  },[])  
+  // const authListener = useCallback( () => {
+  //   fire
+  //   .auth()
+  //   .onAuthStateChanged((user) => {
+  //     if (user) {
+  //       clearInputs();
+  //       setUser(user);
+  //       setShowModal(false);
+  //       setStopMusic(false);
+  //     } 
+  //     else {
+  //       setUser("")
+  //       // setShowModal(true)
+  //     }
+  //   })
+  // },[])  
 
-  useEffect( () => {
-    authListener();
-  },[authListener]);
+  // useEffect( () => {
+  //   authListener();
+  // },[authListener]);
+  
 
   return (
     <div className="App">
       <header className="App-header">
-          <Header handleLogout={handleLogout} setShowModal={setShowModal} user={user} setHasAccount={setHasAccount} hamburgerMenu={hamburgerMenu} setHamburgerMenu={setHamburgerMenu} />
+          <Header 
+          handleLogout={handleLogout} 
+          setShowModal={setShowModal} 
+          user={user} 
+          setHasAccount={setHasAccount} 
+          hamburgerMenu={hamburgerMenu} 
+          setHamburgerMenu={setHamburgerMenu} 
+          />
       </header>
 
       <main>
-        <GetMusic user={user} setShowModal={setShowModal} searchTerm={searchTerm} setSearchTerm={setSearchTerm} userInput={userInput} setUserInput={setUserInput} stopMusic={stopMusic} />
+        <GetMusic 
+        user={user} 
+        setShowModal={setShowModal} 
+        searchTerm={searchTerm} 
+        setSearchTerm={setSearchTerm} 
+        userInput={userInput} 
+        setUserInput={setUserInput} 
+        stopMusic={stopMusic} 
+        />
       
-          <LoginModal email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} emailError={emailError} passwordError={passwordError} hasAccount={hasAccount} setHasAccount={setHasAccount} user={user} showModal={showModal} setShowModal={setShowModal} />
+        <LoginModal 
+        handleLogin={handleLogin}
+        email={email} 
+        setEmail={setEmail}
+        password={password} 
+        setPassword={setPassword}  
+        handleSignUp={handleSignUp} 
+        emailError={emailError} 
+        passwordError={passwordError} 
+        hasAccount={hasAccount} 
+        setHasAccount={setHasAccount} 
+        user={user} 
+        showModal={showModal} 
+        setShowModal={setShowModal} 
+        />
 
       </main>
 
