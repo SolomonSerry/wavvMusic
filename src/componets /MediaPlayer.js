@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { BsFillPlayCircleFill, BsFillPauseCircleFill, BsFillSkipForwardCircleFill, BsFillSkipBackwardCircleFill } from "react-icons/bs";
+import { FaPlay, FaPause } from "react-icons/fa";
+import { IoPlaySkipBack, IoPlaySkipForward } from "react-icons/io5";
 import { HiVolumeUp, HiVolumeOff } from "react-icons/hi";
 import { Slider } from "@mui/material";
 
@@ -98,13 +99,13 @@ const MediaPlayer = ({ audioRef, playPause, setPlayPause, currentTrack, setCurre
                 <div className="mediaButtons">
 
                     <button onClick={() => prevTrack()}>
-                        <BsFillSkipBackwardCircleFill />
+                        <IoPlaySkipBack />
                     </button>
                         <button className="playPause" onClick={() => togglePlayPause()}>
-                            {playPause ? <BsFillPlayCircleFill /> : <BsFillPauseCircleFill />}
+                            {playPause ? <FaPlay /> : <FaPause />}
                         </button>
                     <button onClick={() => nextTrack()}>
-                        <BsFillSkipForwardCircleFill />
+                        <IoPlaySkipForward />
                     </button>
 
                 </div>

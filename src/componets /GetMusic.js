@@ -155,7 +155,7 @@ const GetMusic = ({ user, setShowModal, searchTerm, setSearchTerm, userInput, se
                 <form className="searchBar" onSubmit={handleSubmit}>
                     {/* <label className="sr-only" htmlFor="search"> Search For Music </label>
                     <input placeholder="Search For Music" type="text" id="search" onChange={handleChange} value={userInput} /> */}
-                    <TextField label="Search" onChange={handleChange} value={userInput} inputProps={inputProps}/>
+                    <TextField label="Search" onChange={handleChange} value={userInput} inputProps={inputProps} variant="filled"/>
                     <button> Search </button>
                 </form>
 

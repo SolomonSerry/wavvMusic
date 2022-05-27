@@ -50,7 +50,7 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: center;
-                top: 75px;
+                top: 99px;
                 right: -100%;
                 transition: right 0.3s ease-in-out;
                 z-index: 20;
@@ -61,7 +61,7 @@
                         width: 100%;
                         height: 100%;
                         display: flex;
-                        padding: 18px;
+                        padding: 25px;
                         align-items: center;
                         justify-content: center;
                         transition: background 0.2s ease-in-out;
@@ -74,7 +74,7 @@
                     width: 100%;
                     height: 100%;
                     display: flex;
-                    padding: 18px;
+                    padding: 25px;
                     align-items: center;
                     justify-content: center;
                     transition: background 0.2s ease-in-out;
@@ -263,6 +263,11 @@
             top: 35%;
         }
     }
+    .searchBar {
+        .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+            width: 80%;
+        }
+    }
 }
 
 @media (max-width: 430px) {
@@ -329,6 +334,19 @@
     .pagesBtnContainer {
         height: 40px;
         padding: 35px 0;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+
+    header {
+        .navIcon {
+            ul {
+                top: 95px
+            }
+        } 
+
     }
 }
 
