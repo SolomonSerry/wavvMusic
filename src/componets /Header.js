@@ -3,10 +3,11 @@ import { MdClose } from 'react-icons/md'
 // import { BsSoundwave } from 'react-icons/bs'
 import { GiSoundWaves } from 'react-icons/gi'
 // import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu, setHamburgerMenu }) => {
+const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu, setHamburgerMenu, likedPageVisible, setLikedPageVisible }) => {
 
-    
+    console.log(likedPageVisible)
 
     return (
         <div className="headerContent wrapper">
@@ -20,6 +21,17 @@ const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu
             <nav className='navText'>
                 <ul>
                     <li><a href="#contact">Contact</a></li>
+                    <span>|</span>
+                    {likedPageVisible ?
+                        <li>
+                            <Link to='/' onClick={ () => setLikedPageVisible(false)}> Home</Link>
+                        </li>    
+                    :
+                        <li>
+                            <Link to='/liked' onClick={ () => setLikedPageVisible(true)}> Liked</Link>
+                        </li>    
+
+                    }
                     <span>|</span>
                     {user ?
                         <li onClick={handleLogout}>Logout</li>

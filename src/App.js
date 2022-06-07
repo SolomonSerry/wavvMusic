@@ -4,6 +4,9 @@ import LoginModal from './componets /LoginModal';
 import Header from './componets /Header';
 import Footer from './componets /Footer';
 import Contacts from './componets /Contacts';
+import LikedMusic from './componets /LikedMusic';
+
+import { Routes, Route } from 'react-router-dom';
 
 // React Hooks
 import { useState, useEffect } from 'react';
@@ -32,6 +35,10 @@ function App() {
   const [stopMusic, setStopMusic] = useState(false);
 
   const [hamburgerMenu, setHamburgerMenu] = useState(false);
+
+  const [likedPageVisible, setLikedPageVisible] = useState(false);
+
+  console.log(likedPageVisible)
 
   const clearInputs = () => {
     setEmail("");
@@ -197,6 +204,7 @@ function App() {
 
   return (
     <div className="App">
+
       <header className="App-header">
           <Header 
           handleLogout={handleLogout} 
@@ -204,21 +212,28 @@ function App() {
           user={user} 
           setHasAccount={setHasAccount} 
           hamburgerMenu={hamburgerMenu} 
-          setHamburgerMenu={setHamburgerMenu} 
+          setHamburgerMenu={setHamburgerMenu}
+          likedPageVisible={likedPageVisible}
+          setLikedPageVisible={setLikedPageVisible}
           />
       </header>
 
       <main>
-        <GetMusic 
-        user={user} 
-        setShowModal={setShowModal} 
-        searchTerm={searchTerm} 
-        setSearchTerm={setSearchTerm} 
-        userInput={userInput} 
-        setUserInput={setUserInput} 
-        stopMusic={stopMusic} 
-        />
-      
+        <Routes>
+          <Route path='/' element={ <GetMusic
+            user={user}
+            setShowModal={setShowModal}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            userInput={userInput}
+            setUserInput={setUserInput}
+            stopMusic={stopMusic}
+            />
+          }/>
+
+          <Route path='/liked' element={ <LikedMusic />}/>
+        </Routes>
+       
         <LoginModal 
         handleLogin={handleLogin}
         email={email} 
