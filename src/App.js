@@ -6,7 +6,7 @@ import Footer from './componets /Footer';
 import Contacts from './componets /Contacts';
 import LikedMusic from './componets /LikedMusic';
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 // React Hooks
 import { useState, useEffect } from 'react';
@@ -38,7 +38,7 @@ function App() {
 
   const [likedPageVisible, setLikedPageVisible] = useState(false);
 
-  console.log(likedPageVisible)
+  let navigate = useNavigate();
 
   const clearInputs = () => {
     setEmail("");
@@ -146,6 +146,7 @@ function App() {
     clearInputs();
     setStopMusic(true);
     setHamburgerMenu(false);
+    navigate('/')
   };
 
   useEffect( () => {

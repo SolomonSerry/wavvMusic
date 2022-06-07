@@ -21,16 +21,17 @@ const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu
             <nav className='navText'>
                 <ul>
                     <li><a href="#contact">Contact</a></li>
-                    <span>|</span>
-                    {likedPageVisible ?
+                    {user ?
                         <li>
-                            <Link to='/' onClick={ () => setLikedPageVisible(false)}> Home</Link>
-                        </li>    
-                    :
-                        <li>
-                            <Link to='/liked' onClick={ () => setLikedPageVisible(true)}> Liked</Link>
-                        </li>    
+                            {likedPageVisible ?
+                                <Link to='/' onClick={ () => setLikedPageVisible(false)}> Home</Link>
+                            :
+                                <Link to='/liked' onClick={ () => setLikedPageVisible(true)}> Liked</Link>
+                            }
+                        </li>
 
+                    :
+                        null
                     }
                     <span>|</span>
                     {user ?

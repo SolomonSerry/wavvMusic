@@ -3,9 +3,10 @@
 const LikedMusic = () => {
 
     return (
-        <div>
-            <h2>Liked Music</h2>
-        </div>
+        <section className="likedMusic">
+            <h2>Liked// Music</h2>
+        </section>
+       
     )
 }
 
