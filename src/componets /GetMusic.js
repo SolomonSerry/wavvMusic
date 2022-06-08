@@ -7,7 +7,7 @@ import "swiper/css/bundle";
 import toast, { Toaster } from "react-hot-toast";
 import TextField from '@mui/material/TextField';
 
-// import { BiError } from "react-icons/bi"
+import { AiFillHeart } from "react-icons/ai"
 
 // import { SwiperStyles } 
 
@@ -215,10 +215,17 @@ const GetMusic = ({ user, setShowModal, searchTerm, setSearchTerm, userInput, se
 
                                     return (
                                         <SwiperSlide key={song.track.key}>
-                                            <div className="artContainer" onClick={() => handlePlayPause(song.track)} key={song.track.key}>
-                                                <img src={song.track.images.coverart} alt={`Coverart of ${song.track.title}`} />
-                                                <h3>{song.track.title}</h3>
-                                                <h4>{song.track.subtitle}</h4>
+                                            <div className="artContainer">
+                                                <img src={song.track.images.coverart} alt={`Coverart of ${song.track.title}`} onClick={() => handlePlayPause(song.track)} key={song.track.key} />
+                                                <div className="songInfoContainer">
+                                                    <div>
+                                                        <h3>{song.track.title}</h3>
+                                                        <h4>{song.track.subtitle}</h4>
+                                                    </div>
+                                                    <button onClick={() => toast('Liked')}>
+                                                        <AiFillHeart />
+                                                    </button>
+                                                </div>
                                                 
                                                 
                                             </div>
