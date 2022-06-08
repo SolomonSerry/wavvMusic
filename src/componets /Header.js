@@ -57,8 +57,20 @@ const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu
 
                         <ul className='menuActive'>
                             <li onClick={() => setHamburgerMenu(false)}><a href="#contact" >Contact</a></li>
+
                             {user ?
-                                <li onClick={handleLogout}>Logout</li>
+                                <>
+                                    
+                                    <li>
+                                        {likedPageVisible ?
+                                            <Link to='/' onClick={() => setLikedPageVisible(false)}> Home</Link>
+                                            :
+                                            <Link to='/liked' onClick={() => setLikedPageVisible(true)}> Liked</Link>
+                                        }
+                                    </li>
+                                    <li onClick={handleLogout}>Logout</li>
+                                </>
+
                                 :
                                 <div className="userLogin">
                                     <li onClick={() => { setShowModal(true); setHasAccount(true); setHamburgerMenu(false) }} >Log in</li>
@@ -76,8 +88,18 @@ const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu
 
                         <ul >
                             <li onClick={() => setHamburgerMenu(false)}><a href="#contact" >Contact</a></li>
+
                             {user ?
-                                <li onClick={handleLogout}>Logout</li>
+                                <>
+                                    <li>
+                                        {likedPageVisible ?
+                                            <Link to='/' onClick={() => setLikedPageVisible(false)}> Home</Link>
+                                            :
+                                            <Link to='/liked' onClick={() => setLikedPageVisible(true)}> Liked</Link>
+                                        }
+                                    </li>
+                                    <li onClick={handleLogout}>Logout</li>
+                                </>
                                 :
                                 <div className="userLogin">
                                     <li onClick={() => { setShowModal(true); setHasAccount(true); setHamburgerMenu(false) }} >Log in</li>
