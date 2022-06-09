@@ -53,24 +53,14 @@ const LoginModal = ({ email, setEmail, password, setPassword, handleLogin, handl
                                         </div>
                                     </div>
 
-                                    {/* <div className="providerLogin">
-                                        <button onClick={googleLogin}>
-                                            <FcGoogle />
-                                        </button>
-                                    </div> */}
-
                                     <div className="loginInfo">
                                         
                                         <div className="inputField">
-                                            {/* <label htmlFor="userEmail"> Email </label>
-                                            <input type="email" id="email" required onChange={ (e) => setEmail(e.target.value)} value={email}/> */}
                                             <TextField label="Search" onChange={(e) => setEmail(e.target.value)} value={email} inputProps={emailProps} variant="filled" />
                                             <p className="errorMessage">{emailError}</p>
                                         </div>
 
                                         <div className="inputField">
-                                            {/* <label htmlFor="userPassword"> Password </label>
-                                            <input type="password" id="password" required onChange={ (e) => setPassword(e.target.value)} value={password}/> */}
                                             <TextField label="Password" onChange={(e) => setPassword(e.target.value)} value={password} inputProps={passwordProps} variant="filled" />
                                             <p className="errorMessage">{passwordError}</p>
                                         </div>

@@ -45,7 +45,7 @@ const MediaPlayer = ({ audioRef, playPause, setPlayPause, currentTrack, setCurre
     const timeCalc = (value) => {
         let seconds = Math.floor(value % 60);
         let minutes = Math.floor((value / 60) % 60);
-
+        
         if (seconds < 10) {
             seconds = "0" + seconds;
         };
@@ -119,7 +119,6 @@ const MediaPlayer = ({ audioRef, playPause, setPlayPause, currentTrack, setCurre
                         }
                     </p>
                     <label className="sr-only" htmlFor="trackScrub">Track Scrub</label>
-                    {/* <input className="progress" id="trackScrub" type="range" value={trackProgress} step="1" min="0" max={trackDuration ? trackDuration : `${trackDuration}`} onChange={(event) => onScrub(event.target.value)} defaultValue="0" onMouseUp={onScrubEnd} onKeyUp={onScrubEnd} /> */}
                         <Slider className='slider' step={0.0001} value={trackProgress} onChange={(e) => onScrub(e.target.value)} onMouseUp={onScrubEnd} onKeyUp={onScrubEnd} max={trackDuration}  />
                     
                     <p> -
@@ -145,7 +144,6 @@ const MediaPlayer = ({ audioRef, playPause, setPlayPause, currentTrack, setCurre
                     </button>
                 }
                 <label className="sr-only" htmlFor="volumeInput">Volume</label>
-                {/* <input type="range" id="volumeInput" step="1" min="0" max="100" onChange={volumeChange} value={mute ? 0 : velocity} /> */}
                     <Slider className='volumeRange slider' step={1} min={0} max={100} onChange={volumeChange} value={mute ? 0 : velocity} />
 
             </div>
@@ -162,7 +160,6 @@ const MediaPlayer = ({ audioRef, playPause, setPlayPause, currentTrack, setCurre
                         }
                     </p>
                     <label className="sr-only" htmlFor="trackScrub">Track Scrub</label>
-                    {/* <input className="progress" id="trackScrub" type="range" value={trackProgress} step="1" min="0" max={trackDuration ? trackDuration : `${trackDuration}`} onChange={(event) => onScrub(event.target.value)} onMouseUp={onScrubEnd} onKeyUp={onScrubEnd} /> */}
                     <Slider className='slider' step={1} value={trackProgress} onChange={(e) => onScrub(e.target.value)} onMouseUp={onScrubEnd} onKeyUp={onScrubEnd} max={trackDuration} />
                     <p>
                         {trackDuration ?

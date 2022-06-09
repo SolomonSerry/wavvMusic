@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 
 const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu, setHamburgerMenu, likedPageVisible, setLikedPageVisible }) => {
 
-    console.log(likedPageVisible)
-
     return (
         <div className="headerContent wrapper">
             <div className="logo">
@@ -26,7 +24,7 @@ const Header = ({ handleLogout, setShowModal, user, setHasAccount, hamburgerMenu
                             {likedPageVisible ?
                                 <Link to='/' onClick={ () => setLikedPageVisible(false)}> Home</Link>
                             :
-                                <Link to='/liked' onClick={ () => setLikedPageVisible(true)}> Liked</Link>
+                                <Link to='/liked' onClick={() =>  setLikedPageVisible(true)}> Liked</Link>
                             }
                         </li>
 

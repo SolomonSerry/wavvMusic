@@ -13,16 +13,6 @@ const Contacts = () => {
                 </div>
 
                 <div className="infoContent">
-                    {/* <div className="info">
-                        <p>About Imtiaz</p>
-                        <ul>
-                            <li><a href="https://www.imtiazrashid.com">Portfolio</a></li>
-                            <li><a href="https://www.linkedin.com/in/imtiazrashid/">Linkedin</a></li>
-                            <li><a href="https://github.com/irashid1">Github</a></li>
-                        </ul>
-
-                        
-                    </div> */}
 
                     <div className="info">
                         <p>About Solomon</p>

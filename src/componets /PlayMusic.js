@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 import MediaPlayer from "./MediaPlayer";
 
-const PlayMusic = ({ currentTrack, setCurrentTrack, playPause, setPlayPause, songList, pageIndex, setPageIndex, updatedList, setUpdatedList, updatedPage, setUpdatedPage, searchTerm, stopMusic, coverflowIndex, setCoverflowIndex, sliderRef }) => {
+const PlayMusic = ({ currentTrack, setCurrentTrack, playPause, setPlayPause, songList, pageIndex, setPageIndex, updatedList, setUpdatedList, updatedPage, setUpdatedPage, searchTerm, stopMusic, sliderRef }) => {
 
     // creating a new audioElement and putting it inside audioRef
     const audioElement = new Audio();
@@ -126,15 +126,25 @@ const PlayMusic = ({ currentTrack, setCurrentTrack, playPause, setPlayPause, son
         <>
             {searchTerm ?
                 <div className="mediaPlayerContainer">
-                    <MediaPlayer audioRef={audioRef} playPause={playPause} setPlayPause={setPlayPause} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} songList={songList} pageIndex={pageIndex} setPageIndex={setPageIndex} trackProgress={trackProgress} onScrub={onScrub} onScrubEnd={onScrubEnd} trackDuration={trackDuration} setUpdatedPage={setUpdatedPage} nextTrack={nextTrack} />
+                    <MediaPlayer 
+                    audioRef={audioRef} 
+                    playPause={playPause} 
+                    setPlayPause={setPlayPause} 
+                    currentTrack={currentTrack} 
+                    setCurrentTrack={setCurrentTrack} 
+                    songList={songList} 
+                    pageIndex={pageIndex} 
+                    setPageIndex={setPageIndex} 
+                    trackProgress={trackProgress} 
+                    onScrub={onScrub} 
+                    onScrubEnd={onScrubEnd} 
+                    trackDuration={trackDuration} 
+                    setUpdatedPage={setUpdatedPage} 
+                    nextTrack={nextTrack} />
                 </div>
                 : null}
         </>
 
-
-        // <div className="wrapper">
-        //     <MediaPlayer audioRef={audioRef} playPause={playPause} setPlayPause={setPlayPause} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} songList={songList} pageIndex={pageIndex} setPageIndex={setPageIndex} trackProgress={trackProgress} onScrub={onScrub} onScrubEnd={onScrubEnd} duration={duration} setUpdatedPage={setUpdatedPage}/>
-        // </div>
     )
 }
 

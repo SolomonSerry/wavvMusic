@@ -31,6 +31,7 @@ const Pages = ({ pageIndex, setPageIndex, sliderRef, songList, setPageChange, pa
             
         }
         
+        // determines wheater to start on 0 index or last index oncee page changees 
         useEffect( ()=> {
             if (sliderReset === 1 && pageChange === true) {
                 sliderRef.current.swiper.slideTo(0);

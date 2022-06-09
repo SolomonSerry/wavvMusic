@@ -6,4 +6,38 @@
         font-family: "Bungee Inline", cursive;
         font-weight: lighter;
     }
+    .likedSongContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        .likedSongInfo {
+            display: flex;
+            align-items: center;
+            div {
+                display: flex;
+                flex-direction: column; 
+                h4 {
+                    font-weight: 400;
+                }
+            }
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 5px;
+                margin-right: 20px;
+            }
+        }
+        button {
+            height: 50px;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            background: #0062e2;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+    }
 }
