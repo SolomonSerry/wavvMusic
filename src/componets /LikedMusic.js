@@ -5,6 +5,8 @@ const LikedMusic = ({ likedSongs, handleRemove }) => {
     return (
         <section className="likedMusic wrapper">
             <h2>Liked// Music</h2>
+
+            {/* pop up for when the toaster is used  */}
             <Toaster
                 position="top-center"
                 toastOptions={{

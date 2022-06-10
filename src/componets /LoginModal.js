@@ -56,7 +56,7 @@ const LoginModal = ({ email, setEmail, password, setPassword, handleLogin, handl
                                     <div className="loginInfo">
                                         
                                         <div className="inputField">
-                                            <TextField label="Search" onChange={(e) => setEmail(e.target.value)} value={email} inputProps={emailProps} variant="filled" />
+                                            <TextField label="Email" onChange={(e) => setEmail(e.target.value)} value={email} inputProps={emailProps} variant="filled" />
                                             <p className="errorMessage">{emailError}</p>
                                         </div>
 

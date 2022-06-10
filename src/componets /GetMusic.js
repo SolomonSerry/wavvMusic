@@ -9,8 +9,6 @@ import TextField from '@mui/material/TextField';
 
 import { AiFillHeart } from "react-icons/ai"
 
-// import { SwiperStyles } 
-
 import SwiperCore, { EffectCoverflow, Pagination, Virtual, Navigation } from "swiper/core";
 SwiperCore.use([EffectCoverflow, Pagination, Virtual, Navigation]);
 
@@ -21,7 +19,6 @@ const GetMusic = ({ user, setShowModal, searchTerm, setSearchTerm, userInput, se
 
 
     // states 
-
 
     const [songList, setSongList] = useState([]);
 
@@ -42,6 +39,8 @@ const GetMusic = ({ user, setShowModal, searchTerm, setSearchTerm, userInput, se
     // const [errorPage, setErrorPage] = useState(false);
 
     const sliderRef = useRef();
+
+    // console.log(sliderRef)
 
     const inputProps = {
         name: "Search",
@@ -120,7 +119,6 @@ const GetMusic = ({ user, setShowModal, searchTerm, setSearchTerm, userInput, se
                     // 'x-rapidapi-key': 'cd74434576msh2f5cc3adcc9d925p11959ejsnfe4483674b62' 
                 }
             }).then((response) => {
-                // setErrorPage(false)
                 setSongList(response.data.tracks.hits);
                 setUpdatedList(true); // has to be set after the songList since this is an async event
                 setPageChange(true);
@@ -152,7 +150,15 @@ const GetMusic = ({ user, setShowModal, searchTerm, setSearchTerm, userInput, se
 
             {user ?
                 <form className="searchBar" onSubmit={handleSubmit}>
-                    <TextField label="Search" onChange={handleChange} value={userInput} inputProps={inputProps} variant="filled"/>
+
+                    <TextField 
+                    label="Search" 
+                    onChange={handleChange} 
+                    value={userInput} 
+                    inputProps={inputProps} 
+                    variant="filled"
+                    />
+                    
                     <button> Search </button>
                 </form>
 

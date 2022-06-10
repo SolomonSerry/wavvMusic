@@ -42,6 +42,7 @@ function App() {
 
   const [hamburgerMenu, setHamburgerMenu] = useState(false);
 
+  // for liked page
   const [likedPageVisible, setLikedPageVisible] = useState(false);
   const [likedSongs, setLikedSongs ] = useState([]);
 
@@ -49,7 +50,7 @@ function App() {
   let navigate = useNavigate();
 
 
-  
+  // firebase functions
   const writeToDb = (event) => {
     toast('Liked');
     set(ref(db, 'users/' + event.track.key), {
@@ -137,7 +138,7 @@ function App() {
   };
 
 
-// listens for user and makes changes 
+// listener for user state changes 
   useEffect( () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -146,6 +147,7 @@ function App() {
         setShowModal(false);
         setStopMusic(false);
 
+        // loads fire base db when user logs in 
         const CountRef = ref(db, 'users/')
         onValue(CountRef, (snapshot => {
           const data = snapshot.val()

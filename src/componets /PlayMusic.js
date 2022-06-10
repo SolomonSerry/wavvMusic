@@ -98,7 +98,8 @@ const PlayMusic = ({ currentTrack, setCurrentTrack, playPause, setPlayPause, son
                 setCurrentTrack(songList[songList.length - 1].track);
                 setUpdatedList(false);
                 setUpdatedPage(false);
-            } else if (currentTrack.index < (songList.length - 1) && pageIndex > 0) {
+            } 
+            else if (currentTrack.index < (songList.length - 1) && pageIndex > 0) {
                 // *** condition is here to prevent bugs regarding page changing when the song is being played, undesired results occur when we have page change when the first or last index is being played, requires further investigation ***
                 setCurrentTrack(songList[0].track);
                 setUpdatedList(false);
@@ -142,6 +143,7 @@ const PlayMusic = ({ currentTrack, setCurrentTrack, playPause, setPlayPause, son
                     setUpdatedPage={setUpdatedPage} 
                     nextTrack={nextTrack} />
                 </div>
+
                 : null}
         </>
 
