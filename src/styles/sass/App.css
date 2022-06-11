@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Bungee+Outline&family=Sora:wght@400;700&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -232,7 +232,7 @@ html {
 }
 
 html {
-  font-family: "Poppins", sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: 125%;
   overflow-x: hidden;
 }
@@ -318,11 +318,10 @@ header .navIcon {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   text-transform: uppercase;
-  font-family: "Monoton", cursive;
+  font-family: "Bungee Outline", cursive;
   color: white;
-  font-weight: 200;
   margin: 0;
   padding: 0;
 }
@@ -330,20 +329,20 @@ h2 {
 .logo {
   display: flex;
   align-items: center;
-  font-size: 1.75rem;
+  font-size: 3rem;
   justify-content: center;
   text-align: center;
   margin: 0;
   padding: 0;
 }
 
-.headphones {
-  color: white;
+.soundWave {
+  color: #e7c6ff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 5px;
+  margin-top: 5px;
   padding-right: 5px;
 }
 
@@ -361,7 +360,7 @@ h2 {
 }
 
 .modalContent form {
-  background: #89d4cf;
+  background: #bbd0ff;
   color: black;
   border-radius: 5px;
   display: flex;
@@ -383,10 +382,8 @@ h2 {
   color: black;
 }
 .modalContent form .loginInfo .inputField input {
-  margin: 15px 0 0 0;
   background: rgba(255, 255, 255, 0.541);
   border: none;
-  padding: 5px;
   border-radius: 5px;
 }
 .modalContent form .loginInfo .inputField p {
@@ -396,7 +393,7 @@ h2 {
 .modalContent form button {
   width: 50%;
   margin: 30px auto;
-  font-family: "Poppins", sans-serif;
+  font-family: "Sora", sans-serif;
   border: none;
   background: #0D41E1;
   color: white;
@@ -412,16 +409,17 @@ h2 {
 }
 .loginToggle p span {
   font-size: 0.7rem;
-  color: #001FA8;
+  color: #0D41E1;
   cursor: pointer;
+  transition: color 0.25s ease-in-out;
 }
 .loginToggle p span:hover {
-  color: #111DCF;
+  color: #D90166;
 }
 
 .closeIcon {
   text-align: end;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .modalHeader {
@@ -430,11 +428,11 @@ h2 {
   padding-bottom: 20px;
 }
 .modalHeader p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
-  font-family: "Monoton", cursive;
+  font-family: "Bungee Outline", cursive;
   color: black;
-  font-weight: 200;
+  font-weight: 600;
   margin: 0;
   padding: 0;
   display: flex;
@@ -445,9 +443,8 @@ h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 25px;
   padding-right: 2px;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 footer {
@@ -529,8 +526,26 @@ footer .logo {
   padding: 24px;
   background: rgba(0, 0, 0, 0.1);
   box-shadow: 0 28px 28px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
 }
 
+@-webkit-keyframes moving {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 .mediaContainerTop {
   display: flex;
   justify-content: space-between;
@@ -541,11 +556,16 @@ footer .logo {
   padding: 10px 0;
   display: none;
 }
-.trackTitle p {
+.trackTitle .titleTicker {
   color: black;
   font-size: 0.8rem;
+  transform: translateX(100%);
+  -webkit-animation: moving 10s linear infinite;
+          animation: moving 10s linear infinite;
+  overflow-wrap: normal;
+  width: 500px;
 }
-.trackTitle p span {
+.trackTitle .titleTicker span {
   color: black;
   font-size: 0.8rem;
   font-weight: 600;
@@ -596,25 +616,37 @@ footer .logo {
   background: none;
   font-size: 1.2rem;
   color: black;
+  margin-right: 10px;
 }
-.volumeControls input[type=range] {
+.volumeControls .volumeRange {
   width: 150px;
   margin-bottom: 10px;
 }
 
-input[type=range] {
+.slider {
   height: 10px;
   width: 350px;
   border-radius: 8px;
-  background: royalblue;
   transition: background 0.2s ease;
   cursor: pointer;
+}
+
+.MuiSlider-rail {
+  color: black;
+}
+
+.MuiSlider-track {
+  color: black;
 }
 
 .searchBar {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px 20px 20px 20px;
+}
+.searchBar .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 400px;
 }
 .searchBar input {
   height: 40px;
@@ -630,7 +662,7 @@ input[type=range] {
   color: white;
   padding: 8px 25px;
   border-radius: 25px;
-  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 
 .coverFlow {
@@ -643,14 +675,26 @@ input[type=range] {
   border-radius: 5px;
   transition: transform 0.25s ease-in;
 }
-.artContainer h3 {
+.artContainer .songInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.artContainer .songInfoContainer div h3 {
   padding-top: 10px;
   font-weight: 600;
   font-size: 1.1rem;
 }
-.artContainer h4 {
+.artContainer .songInfoContainer div h4 {
   font-weight: 100;
   font-size: 0.8rem;
+}
+.artContainer .songInfoContainer button {
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  opacity: 0.5;
+  cursor: pointer;
+  z-index: 20;
 }
 
 .mySwiper {
@@ -668,7 +712,11 @@ input[type=range] {
   left: -55px;
 }
 .mySwiper .swiper .swiper-button-next, .mySwiper .swiper .swiper-button-prev {
+  color: black;
   z-index: -10;
+}
+.mySwiper .swiper .swiper-wrapper {
+  width: 0;
 }
 
 .swiper-slide {
@@ -685,6 +733,7 @@ input[type=range] {
 }
 
 .swiper-slide-prev, .swiper-slide-next {
+  color: black;
   opacity: 50%;
 }
 .swiper-slide-prev h3, .swiper-slide-prev h4, .swiper-slide-next h3, .swiper-slide-next h4 {
@@ -703,25 +752,21 @@ input[type=range] {
   height: 5px;
   border-radius: 5px;
 }
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: black;
+}
 
 main {
-  background-image: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
+  background-image: radial-gradient(ellipse at top, #e7c6ff, #b8c0ff, transparent), radial-gradient(ellipse at bottom, #b8c0ff, #bbd0ff, transparent);
   padding-bottom: 25px;
   min-height: 90vh;
 }
 
 h1 {
   font-size: 6rem;
+  font-family: "Bungee Inline", cursive;
   text-transform: uppercase;
-  text-align: center;
-  font-weight: 700;
-  padding: 50px 0;
-}
-h1 span {
-  font-size: 6rem;
-  font-family: "Monoton", cursive;
-  text-transform: uppercase;
-  font-weight: 200;
+  font-weight: lighter;
   color: black;
   display: block;
 }
@@ -803,6 +848,10 @@ h1 span {
   .trackInfo {
     width: 30%;
   }
+
+  .volumeControls {
+    display: none;
+  }
 }
 @media (max-width: 750px) {
   header {
@@ -823,9 +872,10 @@ h1 span {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    top: 75px;
+    top: 99px;
     right: -100%;
     transition: right 0.3s ease-in-out;
+    z-index: 20;
   }
   header .navIcon ul .userLogin {
     width: 100%;
@@ -835,7 +885,7 @@ h1 span {
     width: 100%;
     height: 100%;
     display: flex;
-    padding: 18px;
+    padding: 25px;
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease-in-out;
@@ -847,7 +897,7 @@ h1 span {
     width: 100%;
     height: 100%;
     display: flex;
-    padding: 18px;
+    padding: 25px;
     align-items: center;
     justify-content: center;
     transition: background 0.2s ease-in-out;
@@ -880,10 +930,6 @@ h1 span {
     top: 45%;
   }
 
-  .volumeControls input[type=range] {
-    width: 100px;
-  }
-
   .trackInfo img {
     width: 60px;
     height: 60px;
@@ -898,6 +944,9 @@ html {
     overflow-x: hidden;
   }
 
+  .mediaContainer {
+    width: 60%;
+  }
   .mediaContainer .mediaButtons .playPause {
     margin: 0 5px;
   }
@@ -974,7 +1023,7 @@ html {
     display: none;
   }
   .mediaContainer .mediaButtons {
-    justify-content: flex-end;
+    justify-content: space-evenly;
   }
 
   .mediaContainerTop {
@@ -990,11 +1039,25 @@ html {
     font-size: 0.6rem;
     padding-top: 5px;
   }
+
+  main .likedMusic .likedSongContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 25px 0;
+  }
+  main .likedMusic .likedSongContainer .likedSongInfo {
+    margin-bottom: 15px;
+  }
 }
 @media (max-width: 460px) {
   .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
     top: 35%;
+  }
+
+  .searchBar .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 80%;
   }
 }
 @media (max-width: 430px) {
@@ -1055,9 +1118,57 @@ html {
     height: 40px;
     padding: 35px 0;
   }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+  header .navIcon ul {
+    top: 95px;
+  }
 }
 @media (max-width: 390px) {
   .mediaTimeBottom p {
     display: none;
   }
+}
+.likedMusic h2 {
+  text-align: center;
+  padding: 50px;
+  color: black;
+  font-family: "Bungee Inline", cursive;
+  font-weight: lighter;
+}
+.likedMusic .likedSongContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.likedMusic .likedSongContainer .likedSongInfo {
+  display: flex;
+  align-items: center;
+}
+.likedMusic .likedSongContainer .likedSongInfo div {
+  display: flex;
+  flex-direction: column;
+}
+.likedMusic .likedSongContainer .likedSongInfo div h4 {
+  font-weight: 400;
+}
+.likedMusic .likedSongContainer .likedSongInfo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.likedMusic .likedSongContainer button {
+  height: 50px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background: #0062e2;
+  color: white;
+  padding: 8px 25px;
+  border-radius: 25px;
+  cursor: pointer;
 }/*# sourceMappingURL=App.css.map */

@@ -110,13 +110,6 @@ const GetMusic = ({ user, setShowModal, searchTerm, setSearchTerm, userInput, se
                     // 'x-rapidapi-host': 'shazam.p.rapidapi.com',
                     // 'x-rapidapi-key': '4e6f74d025msh36947ff6c814c7cp11d0c1jsnc6f9a4f67eae'
 
-                    // Imtiaz key #1
-                    // 'x-rapidapi-host': 'shazam.p.rapidapi.com',
-                    // 'x-rapidapi-key': 'cd2f669506mshbacf9d2b7d2169ep15ef89jsnb7d5c64abf1d'
-
-                    // Imtiaz key#2
-                    // 'x-rapidapi-host': 'shazam.p.rapidapi.com',
-                    // 'x-rapidapi-key': 'cd74434576msh2f5cc3adcc9d925p11959ejsnfe4483674b62' 
                 }
             }).then((response) => {
                 setSongList(response.data.tracks.hits);

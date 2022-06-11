@@ -56,6 +56,7 @@ const MediaPlayer = ({ audioRef, playPause, setPlayPause, currentTrack, setCurre
 //  console.log(audioRef.current.volume)
 
     // controls the mute state for scrub
+    // console.log(velocity)
     useEffect(() => {
         audioRef.current.volume = velocity / 100;
   
