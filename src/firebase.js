@@ -27,7 +27,7 @@ import { getDatabase } from 'firebase/database'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAIdH2u0XEBwvTmkM48-Mg5PFPcIHznGvw",
+    apiKey: process.env.API_KEY,
     authDomain: "music-app-7e48c.firebaseapp.com",
     databaseURL: "https://music-app-7e48c-default-rtdb.firebaseio.com",
     projectId: "music-app-7e48c",
