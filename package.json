@@ -20,7 +20,7 @@
     "react-scripts": "5.0.0",
     "react-spring": "^9.4.3",
     "sass": "^1.49.7",
-    "swiper": "^8.0.7",
+    "swiper": "^8.4.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
