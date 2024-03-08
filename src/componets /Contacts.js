@@ -1,5 +1,7 @@
 import { GiSoundWaves } from 'react-icons/gi'
 
+// just adding a line of code to test if I can disable the snyk pr scan
+
 const Contacts = () => {
 
     return(
